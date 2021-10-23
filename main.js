@@ -1,7 +1,7 @@
 const LinksSocialMedia = {
   github: 'MilaPinheiro',
-  youtube: 'Camila Mila',
-  facebook: 'camila.pinheiro.5201',
+  discordapp: 'users/809398626777301022',
+  codepen: 'Mih_s',
   instagram: '_mihsp',
   twitter: 'mih00385410'
 }
@@ -9,8 +9,8 @@ const LinksSocialMedia = {
 function changeSocialMediaLinks() {
   for (let li of socialLinks.children) {
     const social = li.getAttribute('class')
-
-    li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+    const domain = social==='codepen' ? 'io' : 'com'
+    li.children[0].href = `https://${social}.${domain}/${LinksSocialMedia[social]}`
   }
 }
 
